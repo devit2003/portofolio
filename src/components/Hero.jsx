@@ -1,9 +1,9 @@
 // src/components/Hero.jsx
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState, lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import Particles from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
+const Particles = lazy(() => import('@tsparticles/react'))
 import {
   FiGithub, FiMail, FiLinkedin,FiYoutube, FiDownload, FiArrowRight, FiPhone
 } from 'react-icons/fi'
@@ -39,52 +39,64 @@ const fadeUp = {
 }
 
 const Hero = () => {
+  const [showParticles, setShowParticles] = useState(false)
   const particlesInit = useCallback(async engine => {
     await loadSlim(engine)
+  }, [])
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px) and (pointer: fine)')
+    const update = () => setShowParticles(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
   }, [])
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Particles */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: { color: { value: 'transparent' } },
-          fpsLimit: 60,
-          particles: {
-            number: { value: 60, density: { enable: true, width: 1920 } },
-            color: { value: ['#38bdf8', '#a78bfa', '#00f5d4'] },
-            shape: { type: 'circle' },
-            opacity: { value: 0.35, random: true },
-            size: { value: { min: 1, max: 3 } },
-            links: {
-              enable: true,
-              distance: 150,
-              color: '#38bdf8',
-              opacity: 0.12,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 0.8,
-              direction: 'none',
-              outModes: { default: 'out' },
-            },
-          },
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: 'grab' },
-              onClick: { enable: true, mode: 'push' },
-            },
-            modes: {
-              grab: { distance: 180, links: { opacity: 0.3 } },
-              push: { quantity: 3 },
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+      {showParticles && (
+        <Suspense fallback={null}>
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            options={{
+              background: { color: { value: 'transparent' } },
+              fpsLimit: 30,
+              particles: {
+                number: { value: 20, density: { enable: true, width: 1920 } },
+                color: { value: ['#38bdf8', '#a78bfa', '#00f5d4'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.25, random: true },
+                size: { value: { min: 1, max: 2 } },
+                links: {
+                  enable: true,
+                  distance: 120,
+                  color: '#38bdf8',
+                  opacity: 0.1,
+                  width: 1,
+                },
+                move: {
+                  enable: true,
+                  speed: 0.5,
+                  direction: 'none',
+                  outModes: { default: 'out' },
+                },
+              },
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: 'grab' },
+                  onClick: { enable: false },
+                },
+                modes: {
+                  grab: { distance: 140, links: { opacity: 0.25 } },
+                },
+              },
+              detectRetina: true,
+            }}
+          />
+        </Suspense>
+      )}
 
       {/* Background */}
       <div className="absolute inset-0 z-0">

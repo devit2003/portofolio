@@ -1,5 +1,5 @@
 // src/App.jsx
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import { useTheme } from './hooks/useTheme'
@@ -8,14 +8,15 @@ import { useScrollProgress } from './hooks/useScrollProgress'
 import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Certificates from './components/Certificates'
-import Statistics from './components/Statistics'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+
+const About = lazy(() => import('./components/About'))
+const Skills = lazy(() => import('./components/Skills'))
+const Projects = lazy(() => import('./components/Projects'))
+const Experience = lazy(() => import('./components/Experience'))
+const Certificates = lazy(() => import('./components/Certificates'))
+const Statistics = lazy(() => import('./components/Statistics'))
+const Contact = lazy(() => import('./components/Contact'))
+const Footer = lazy(() => import('./components/Footer'))
 
 // Back to top button
 const BackToTop = () => {
@@ -76,16 +77,20 @@ const App = () => {
 
             <main>
               <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <Experience />
-              <Statistics />
-              <Certificates />
-              <Contact />
+              <Suspense fallback={<div className="min-h-[120vh] grid place-items-center text-white">Loading section...</div>}>
+                <About />
+                <Skills />
+                <Projects />
+                <Experience />
+                <Statistics />
+                <Certificates />
+                <Contact />
+              </Suspense>
             </main>
 
-            <Footer />
+            <Suspense fallback={null}>
+              <Footer />
+            </Suspense>
 
             {/* Back to top */}
             <BackToTop />
