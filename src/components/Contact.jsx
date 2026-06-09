@@ -7,7 +7,7 @@ import { FiGithub, FiLinkedin, FiMail, FiYoutube, FiSend, FiCheck } from 'react-
 const socials = [
   { Icon: FiGithub,   label: 'GitHub',   href: 'https://github.com/devit2003',      color: '#6e7681' },
   { Icon: FiLinkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/devitsaputra', color: '#0077b5' },
-  { Icon: FiMail,     label: 'Email',    href: 'mailto:devit.saputra@mhs.itenas.ac.id',             color: '#ea4335' },
+  { Icon: FiMail,     label: 'Email',    href: 'mailto:devrafaezya34@gmail.com',             color: '#ea4335' },
   { Icon: FiYoutube,  label: 'YouTube',  href: 'https://youtube.com/@devitsaputra',    color: '#ff0000' },
 ]
 
@@ -80,10 +80,21 @@ const Contact = () => {
   const handleSubmit = async () => {
     const errs = validate(values)
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
+    // Build mailto link to send message to the target email
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1500))
-    setLoading(false)
-    setSubmitted(true)
+    const to = 'devrafaezya34@gmail.com'
+    const subject = encodeURIComponent(values.subject || 'No subject')
+    const body = encodeURIComponent(
+      `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
+    )
+    const mailto = `mailto:${to}?subject=${subject}&body=${body}`
+    // Open user's mail client with prefilled email. User must confirm send in their client.
+    window.location.href = mailto
+    // mark submitted after short delay
+    setTimeout(() => {
+      setLoading(false)
+      setSubmitted(true)
+    }, 800)
   }
 
   return (
