@@ -7,7 +7,7 @@ const education = [
   {
     degree: 'S1 Teknik Informatika',
     school: 'Institut Teknologi Nasional Bandung (ITENAS)',
-    year: '2022 – Sekarang',
+    year: '2022 – 2027',
     note: 'IPK: 3.41 / 4.00',
     icon: '🎓',
     active: true,
@@ -15,7 +15,7 @@ const education = [
 ]
 
 const highlights = [
-  { icon: FiBook,   label: 'Minat Utama',    value: 'Computer Vision & NLP' },
+  { icon: FiBook,   label: 'Minat Utama',    value: 'Computer Vision, NLP, AI, dan Machine Learning' },
   { icon: FiAward,  label: 'IPK',            value: '3.41 / 4.00' },
   { icon: FiCode,   label: 'Tech Stack',     value: 'Python · YOLOv8 · Flask · RAG' },
   { icon: FiTarget, label: 'Career Goal',    value: 'AI / ML Engineer' },
@@ -59,7 +59,7 @@ const About = () => {
               <span className="glow-text">sistem cerdas</span>
             </h2>
             <p className="section-subtitle">
-              Mahasiswa tingkat akhir Teknik Informatika yang fokus pada AI, Machine Learning, dan Computer Vision.
+              Lulusan Informatika yang fokus pada AI, Machine Learning, dan Computer Vision.
             </p>
           </motion.div>
 
@@ -68,7 +68,7 @@ const About = () => {
             <div className="space-y-8">
               <motion.div variants={fadeUp}>
                 <p className="font-body text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  Saya adalah mahasiswa tingkat akhir Program Studi Teknik Informatika di Institut Teknologi
+                  Saya adalah lulusan Program Studi Informatika di Institut Teknologi
                   Nasional Bandung (ITENAS) dengan minat dan fokus pada bidang Machine Learning, Artificial
                   Intelligence, Computer Vision, dan Natural Language Processing.
                 </p>
@@ -197,8 +197,7 @@ const About = () => {
                 <h4 className="font-display text-sm font-semibold uppercase tracking-widest"
                   style={{ color: 'var(--text-muted)' }}>Kontak</h4>
                 {[
-                  { label: '📧 Email', value: 'devit.saputra@mhs.itenas.ac.id' },
-                  { label: '📱 Phone', value: '+6282290234298' },
+                  { label: '📧 Email', value: 'devrafaezya23@gmail.com' },
                   { label: '📍 Lokasi', value: 'Bandung, Indonesia' },
                   { label: '🐙 GitHub', value: 'github.com/devit2003' },
                 ].map(({ label, value }) => (

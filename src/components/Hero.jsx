@@ -25,7 +25,6 @@ const socialLinks = [
   { Icon: FiGithub, href: 'https://github.com/devit2003',              label: 'GitHub' },
   { Icon: FiMail,   href: 'mailto:devrafaezya23@gmail.com',    label: 'Email' },
   { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/devit-saputra-546a452a6',    label: 'LinkedIn' },
-  { Icon: FiPhone,  href: 'tel:+6282290234298',                        label: 'Phone' },
   { Icon: FiYoutube,  href: 'https://www.youtube.com/@Devrafaezya',       label: 'YouTube' },
 ]
 
@@ -167,7 +166,7 @@ const Hero = () => {
             className="font-body text-base lg:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Mahasiswa tingkat akhir Teknik Informatika di ITENAS Bandung, berfokus pada{' '}
+            Lulusan Informatika di ITENAS Bandung, berfokus pada{' '}
             <span style={{ color: 'var(--neon)' }}>Computer Vision</span>,{' '}
             <span style={{ color: 'var(--gradient-end)' }}>Machine Learning</span>, dan{' '}
             <span style={{ color: 'var(--gradient-start)' }}>Agentic AI</span> — mengubah
@@ -176,7 +175,7 @@ const Hero = () => {
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
             <a
-              href="/cv/Devit saputra CV- ML.pdf"
+              href="/cv/cv.pdf"
             download
             className="btn-primary"
             >

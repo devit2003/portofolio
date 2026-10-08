@@ -1,52 +1,64 @@
-// src/data/certificates.js
-
 export const certificates = [
-  {
+    {
     id: 1,
-    title: 'Data Classification and Summarization Using IBM Granite',
-    issuer: 'IBM skillsbuild × Hacktiv8',
-    date: 'Dec 2023',
-    image: '/sertifikat/IBM.jpg',
-    credential: '/sertifikat/IBM.jpg',
+    title: 'Python Essentials 1',
+    issuer: 'Cisco Networking Academy',
+    date: '2026',
+    file: '/sertifikat/Python1.pdf',
+    type: 'pdf',
   },
-  {
+
+    {
     id: 2,
-    title: 'Classifying Data Using IBM GraniteData Classification and Summarization Using IBM Granite',
-    issuer: 'IBM skillsbuild × Hacktiv8',
-    date: 'Feb 2024',
-    image: '/sertifikat/ibm1.jpg',
-    credential: '/sertifikat/ibm1.jpg',
+    title: 'Python Essentials 2',
+    issuer: 'Cisco Networking Academy',
+    date: '2026',
+    file: '/sertifikat/Python2.pdf',
+    type: 'pdf',
   },
+
   {
     id: 3,
-    title: 'Data Classification and Summarization Using IBM Granite',
-    issuer: 'IBM skillsbuild',
-    date: 'Mar 2024',
-    image: '/sertifikat/ibm3.jpg',
-    credential: '/sertifikat/ibm3.jpg',
+    title: 'Data Science Certificate',
+    issuer: 'Data Science',
+    date: '2026',
+    file: '/sertifikat/data.pdf',
+    type: 'pdf',
   },
+
   {
     id: 4,
-    title: 'Natural Language Processing',
-    issuer: 'Hugging Face',
-    date: 'Apr 2024',
-    image: 'https://images.unsplash.com/photo-1673255745677-9e67a80ecae9?w=500&q=80',
-    credential: 'https://images.unsplash.com/photo-1673255745677-9e67a80ecae9?w=500&q=80',
+    title: 'GitHub Certificate',
+    issuer: 'GitHub',
+    date: '2025',
+    file: '/sertifikat/github.pdf',
+    type: 'pdf',
   },
+
   {
     id: 5,
-    title: 'Computer Vision Nanodegree',
-    issuer: 'Udacity',
-    date: 'Jun 2024',
-    image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=500&q=80',
-    credential: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=500&q=80',
+    title: 'IBM Certificate',
+    issuer: 'IBM',
+    date: '2025',
+    file: '/sertifikat/IBM.jpg',
+    type: 'image',
   },
+
   {
     id: 6,
-    title: 'AWS Machine Learning Specialty',
-    issuer: 'Amazon Web Services',
-    date: 'Aug 2024',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80',
-    credential: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80',
+    title: 'IBM Certificate 1',
+    issuer: 'IBM',
+    date: '2025',
+    file: '/sertifikat/ibm1.jpg',
+    type: 'image',
+  },
+
+  {
+    id: 7,
+    title: 'IBM Certificate 3',
+    issuer: 'IBM',
+    date: '2025',
+    file: '/sertifikat/ibm3.jpg',
+    type: 'image',
   },
 ]

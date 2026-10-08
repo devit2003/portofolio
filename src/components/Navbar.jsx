@@ -6,6 +6,7 @@ import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi'
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Publications', href: '#publications' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Certificates', href: '#certificates' },
@@ -110,7 +111,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
             </button>
 
             {/* Resume CTA */}
-            <a href="#" className="btn-primary hidden md:inline-flex">
+            <a href="/cv/cv.pdf" className="btn-primary hidden md:inline-flex">
               <span>Resume</span>
             </a>
 

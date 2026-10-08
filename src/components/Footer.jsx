@@ -5,6 +5,7 @@ import { FiGithub, FiLinkedin, FiMail, FiYoutube, FiHeart } from 'react-icons/fi
 const navLinks = [
   { label: 'About',       href: '#about' },
   { label: 'Skills',      href: '#skills' },
+  { label: 'Publications', href: '#publications' },
   { label: 'Projects',    href: '#projects' },
   { label: 'Experience',  href: '#experience' },
   { label: 'Certificates', href: '#certificates' },
@@ -100,7 +101,7 @@ const Footer = () => {
             </div>
             <div className="space-y-2">
               {[
-                { label: 'Email',    value: 'devit.saputra@mhs.itenas.ac.id' },
+                { label: 'Email',    value: 'devrafaezya23@gmail.com' },
                 { label: 'Location', value: 'Bandung, Indonesia' },
                 { label: 'Status',   value: 'Open to opportunities' },
               ].map(({ label, value }) => (
